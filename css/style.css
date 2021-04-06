@@ -833,6 +833,18 @@ body.ie ._ibg img {
   background-color: rgba(0, 0, 0, 0.5);
 }
 
+.popup:target {
+  opacity: 1;
+  visibility: visible;
+}
+
+.popup:target .popup__content {
+  opacity: 1;
+  -webkit-transform: translate(0, 0);
+      -ms-transform: translate(0, 0);
+          transform: translate(0, 0);
+}
+
 .popup__body {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -852,6 +864,14 @@ body.ie ._ibg img {
       -ms-flex: 1 1 auto;
           flex: 1 1 auto;
   width: 100%;
+}
+
+.popup__close-area {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
 .popup__content {
@@ -880,18 +900,6 @@ body.ie ._ibg img {
   cursor: pointer;
   z-index: 30;
   background: url("../img/icons/close.svg") 0 0 no-repeat;
-}
-
-.popup.open {
-  opacity: 1;
-  visibility: visible;
-}
-
-.popup.open .popup__content {
-  opacity: 1;
-  -webkit-transform: translate(0, 0);
-      -ms-transform: translate(0, 0);
-          transform: translate(0, 0);
 }
 
 .banner-form__title {
@@ -940,7 +948,7 @@ body.ie ._ibg img {
   background-color: #000;
 }
 
-.header-wrapper {
+.header {
   position: fixed;
   z-index: 20;
   width: 100%;
@@ -1013,9 +1021,9 @@ body.ie ._ibg img {
   display: block;
   position: absolute;
   right: 5px;
-  top: -60px;
-  width: 300px;
-  height: 35px;
+  padding: 10px;
+  top: -100px;
+  width: 235px;
   background-color: #fff;
   border-radius: 5px;
   display: -webkit-box;
@@ -1034,7 +1042,29 @@ body.ie ._ibg img {
 }
 
 .call-btn__contact.\._active {
-  top: 45px;
+  top: 27px;
+}
+
+.call-btn__contact-phones {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  font-weight: 700;
+}
+
+.call-btn__contact-phones span {
+  margin-bottom: 10px;
+}
+
+.call-btn__contact-text {
+  font-weight: 700;
 }
 
 .top-line__btn {
@@ -1045,11 +1075,11 @@ body.ie ._ibg img {
   display: none;
 }
 
-.header {
+.navigation-bar {
   display: none;
 }
 
-.header.\._active {
+.navigation-bar.\._active {
   top: 60px;
 }
 
@@ -1268,7 +1298,6 @@ body.ie ._ibg img {
 }
 
 .last-works__slider {
-  max-width: 700px;
   margin: 0 auto;
 }
 
@@ -1873,7 +1902,6 @@ body.ie ._ibg img {
 }
 
 .feedback-slider {
-  max-width: 700px;
   margin: 0 auto;
   margin-bottom: 30px;
 }
@@ -2281,7 +2309,7 @@ body.ie ._ibg img {
     max-width: 100%;
   }
 
-  .header {
+  .navigation-bar {
     display: block;
     z-index: 1;
   }
@@ -2340,7 +2368,7 @@ body.ie ._ibg img {
 
 @media (min-width: 767.98px) {
   .container {
-    max-width: 748px;
+    max-width: 100%;
   }
 
   .top-line {
@@ -2357,36 +2385,67 @@ body.ie ._ibg img {
     display: none;
   }
 
-  .top-line__btn {
-    display: block;
-    padding: 15px 30px 15px 70px;
-    background-color: #fff0d0;
-    border-radius: 5px;
-    background-image: url("../img/header/book-icon.svg");
+  .contact {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+
+  .contact__phones {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin-bottom: 10px;
+  }
+
+  .contact__phones span {
+    font-size: 16px;
+    font-weight: 700;
+    margin-right: 20px;
+  }
+
+  .contact .wtsup {
+    background-image: url("../img/icons/whatsapp.svg");
     background-repeat: no-repeat;
-    background-position: 15px center;
-    -webkit-transition: all 0.2s ease-in-out;
-    -o-transition: all 0.2s ease-in-out;
-    transition: all 0.2s ease-in-out;
+    background-size: cover;
+    width: 18px;
+    height: 18px;
+    margin-right: 10px;
   }
 
-  .top-line__btn:hover {
-    background-color: #caaf75;
+  .contact .viber {
+    background-image: url("../img/icons/viber.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 18px;
+    height: 18px;
   }
 
-  .top-line__btn .top-line__btn-link {
-    display: block;
-    color: #000;
-    -webkit-transition: color 0.2s ease-in-out;
-    -o-transition: color 0.2s ease-in-out;
-    transition: color 0.2s ease-in-out;
+  .contact__text {
+    -ms-flex-item-align: end;
+        align-self: flex-end;
   }
 
-  .top-line__btn .top-line__btn-link:hover {
-    color: #fff;
+  .contact__text span {
+    font-size: 14px;
+    background-image: url("../img/header/green-dot.svg");
+    background-repeat: no-repeat;
+    background-position: 0px center;
+    padding-left: 20px;
   }
 
-  .header {
+  .contact__text span a {
+    text-decoration: underline;
+  }
+
+  .navigation-bar {
     background-color: #ffb215;
     position: absolute;
     top: 0px;
@@ -2555,6 +2614,7 @@ body.ie ._ibg img {
     -webkit-box-align: start;
         -ms-flex-align: start;
             align-items: flex-start;
+    padding: 0px 45px;
   }
 
   .sum__result {
@@ -2671,64 +2731,33 @@ body.ie ._ibg img {
     max-width: 1130px;
   }
 
-  .contact {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-  }
-
-  .contact__phones {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    margin-bottom: 10px;
-  }
-
-  .contact__phones span {
-    font-size: 16px;
-    font-weight: 700;
-    margin-right: 20px;
-  }
-
-  .contact .wtsup {
-    background-image: url("../img/icons/whatsapp.svg");
+  .top-line__btn {
+    display: block;
+    padding: 15px 30px 15px 70px;
+    background-color: #fff0d0;
+    border-radius: 5px;
+    background-image: url("../img/header/book-icon.svg");
     background-repeat: no-repeat;
-    background-size: cover;
-    width: 18px;
-    height: 18px;
-    margin-right: 10px;
+    background-position: 15px center;
+    -webkit-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
   }
 
-  .contact .viber {
-    background-image: url("../img/icons/viber.svg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    width: 18px;
-    height: 18px;
+  .top-line__btn:hover {
+    background-color: #caaf75;
   }
 
-  .contact__text {
-    -ms-flex-item-align: end;
-        align-self: flex-end;
+  .top-line__btn .top-line__btn-link {
+    display: block;
+    color: #000;
+    -webkit-transition: color 0.2s ease-in-out;
+    -o-transition: color 0.2s ease-in-out;
+    transition: color 0.2s ease-in-out;
   }
 
-  .contact__text span {
-    font-size: 14px;
-    background-image: url("../img/header/green-dot.svg");
-    background-repeat: no-repeat;
-    background-position: 0px center;
-    padding-left: 20px;
-  }
-
-  .contact__text span a {
-    text-decoration: underline;
+  .top-line__btn .top-line__btn-link:hover {
+    color: #fff;
   }
 
   .nav .sub-link-wrapper {
@@ -2916,7 +2945,9 @@ body.ie ._ibg img {
 
 @supports (-webkit-appearance:none){
 .logo a{background-image:url(../img/logo-black.svg)}
-.top-line__btn{background-image:url("../img/header/book-icon.svg")}
+.contact .wtsup{background-image:url("../img/icons/whatsapp.svg")}
+.contact .viber{background-image:url("../img/icons/viber.svg")}
+.contact__text span{background-image:url("../img/header/green-dot.svg")}
 .banner{background-image:url("../img/banner-banner.webp")}
 .footer{background-image:url("../img/gradient-bg.webp")}
 }
@@ -2958,9 +2989,7 @@ body.ie ._ibg img {
  @media (min-width: 1150px){
 
 @supports (-webkit-appearance:none){
-.contact .wtsup{background-image:url("../img/icons/whatsapp.svg")}
-.contact .viber{background-image:url("../img/icons/viber.svg")}
-.contact__text span{background-image:url("../img/header/green-dot.svg")}
+.top-line__btn{background-image:url("../img/header/book-icon.svg")}
 }
 
 }

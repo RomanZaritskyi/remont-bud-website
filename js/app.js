@@ -11,7 +11,7 @@ $(document).ready(function () {
         },
       },
       {
-        breakpoint: 1023,
+        breakpoint: 800,
         settings: {
           slidesToShow: 3,
         }
@@ -31,32 +31,22 @@ $(document).ready(function () {
 $(document).ready(function () {
   $('.feedback-slider').slick({
     arrows: false,
+    dots: true,
     responsive: [
       {
-        breakpoint: 767,
+        breakpoint: 620,
         settings: {
-          slidesToShow: 1,
+          slidesToShow: 2,
 
         },
       },
       {
-        breakpoint: 1023,
+        breakpoint: 980,
         settings: {
           slidesToShow: 3,
+          dots: false
         }
       },
-      {
-        breakpoint: 1236,
-        settings: {
-          slidesToShow: 3,
-        }
-      }, {
-        breakpoint: 2984,
-        settings: {
-          slidesToShow: 3,
-          dots: false,
-        }
-      }
     ],
     mobileFirst: true,
   });
@@ -86,11 +76,11 @@ if (menuArrows.length > 0) {
 const iconMenu = document.querySelector('.burger');
 if (iconMenu) {
   const nav = document.querySelector('.nav')
-  const header = document.querySelector('.header')
+  const navigationBar = document.querySelector('.navigation-bar')
   iconMenu.addEventListener("click", function (e) {
     // iconMenu.classList.toggle('._active');//для анімації іконки
     nav.classList.toggle('._active');
-    header.classList.toggle('._active');
+    navigationBar.classList.toggle('._active');
   })
 }
 
@@ -101,34 +91,6 @@ if (callBtn) {
     contact.classList.toggle('._active');
   })
 }
-
-
-
-
-// popup  
-const popupLinks = document.querySelectorAll('.popup-link');
-const closeIcon = document.querySelector('.close-popup');
-const popup = document.querySelector('.popup');
-const popupBody = document.querySelector('.popup__body');
-const popupContent = document.querySelector('.popup__content');
-
-// openPopup
-function openPopup() {
-  for (let i = 0; i < popupLinks.length; i++) {
-    const link = popupLinks[i];
-    link.addEventListener('click', function () {
-      popup.classList.add('open')
-    })
-  }
-}
-openPopup()
-// Close popup
-function closePopup() {
-  popup.classList.remove('open')
-}
-closeIcon.addEventListener('click', closePopup);
-
-
 
 function email_test(input) {
 	return !/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,8})+$/.test(input.value);
