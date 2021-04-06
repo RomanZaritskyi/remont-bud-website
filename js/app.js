@@ -1,4 +1,4 @@
-// last-work slider
+// last - work slider
 $(document).ready(function () {
   $('.last-works__slider').slick({
     arrows: false,
@@ -62,10 +62,6 @@ $(document).ready(function () {
   });
 });
 
-//active-form
-document.querySelector('.banner__btn').addEventListener('click', function () {
-  document.querySelector('.banner-form').classList.add("active-form")
-})
 
 // footer - dropdown
 $(document).ready(function () {
@@ -91,13 +87,36 @@ const iconMenu = document.querySelector('.burger');
 if (iconMenu) {
   const nav = document.querySelector('.nav')
   iconMenu.addEventListener("click", function (e) {
-    // iconMenu.classList.toggle('._active');
+    iconMenu.classList.toggle('._active');
     nav.classList.toggle('._active');
   })
 }
+
+// Звичfйне меню
+
+// popup
+const popupLink = document.querySelector('.popup-link');
+const closeIcon = document.querySelector('.close-popup');
+const popup = document.querySelector('.popup');
+const popupBody = document.querySelector('.popup__body');
+const popupContent = document.querySelector('.popup__content');
+
+// openPopup
+function openPopup() {
+  popup.classList.add('open')
+}
+popupLink.addEventListener('click', openPopup);
+
+// Close popup
+function closePopup() {
+  popup.classList.remove('open')
+}
+closeIcon.addEventListener('click', closePopup);
 
 
 
 function email_test(input) {
 	return !/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,8})+$/.test(input.value);
 }
+
+
