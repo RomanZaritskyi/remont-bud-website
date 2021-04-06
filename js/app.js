@@ -82,20 +82,31 @@ if (menuArrows.length > 0) {
   }
 }
 
-// бургер меню
+//  меню
 const iconMenu = document.querySelector('.burger');
 if (iconMenu) {
   const nav = document.querySelector('.nav')
+  const header = document.querySelector('.header')
   iconMenu.addEventListener("click", function (e) {
-    iconMenu.classList.toggle('._active');
+    // iconMenu.classList.toggle('._active');//для анімації іконки
     nav.classList.toggle('._active');
+    header.classList.toggle('._active');
   })
 }
 
-// Звичfйне меню
+const callBtn = document.querySelector('.call-btn');
+if (callBtn) {
+  const contact = document.querySelector('.call-btn__contact');
+  callBtn.addEventListener('click', function (e) {
+    contact.classList.toggle('._active');
+  })
+}
 
-// popup
-const popupLink = document.querySelector('.popup-link');
+
+
+
+// popup  
+const popupLinks = document.querySelectorAll('.popup-link');
 const closeIcon = document.querySelector('.close-popup');
 const popup = document.querySelector('.popup');
 const popupBody = document.querySelector('.popup__body');
@@ -103,10 +114,14 @@ const popupContent = document.querySelector('.popup__content');
 
 // openPopup
 function openPopup() {
-  popup.classList.add('open')
+  for (let i = 0; i < popupLinks.length; i++) {
+    const link = popupLinks[i];
+    link.addEventListener('click', function () {
+      popup.classList.add('open')
+    })
+  }
 }
-popupLink.addEventListener('click', openPopup);
-
+openPopup()
 // Close popup
 function closePopup() {
   popup.classList.remove('open')

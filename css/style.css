@@ -927,7 +927,7 @@ body.ie ._ibg img {
 .banner-form__text {
   height: 80px;
   padding: 9px 0px 0px 40px;
-  background-image: url("../img/message.png");
+  background-image: url("../img/modal-message.png");
   background-repeat: no-repeat;
   background-position: 15px 10px;
 }
@@ -938,6 +938,12 @@ body.ie ._ibg img {
 
 .banner-form__btn:active {
   background-color: #000;
+}
+
+.header-wrapper {
+  position: fixed;
+  z-index: 20;
+  width: 100%;
 }
 
 .top-line {
@@ -991,6 +997,7 @@ body.ie ._ibg img {
 
 .call-btn {
   cursor: pointer;
+  position: relative;
 }
 
 .call-btn__link {
@@ -1000,6 +1007,34 @@ body.ie ._ibg img {
   background-position: left center;
   width: 30px;
   height: 25px;
+}
+
+.call-btn__contact {
+  display: block;
+  position: absolute;
+  right: 5px;
+  top: -60px;
+  width: 300px;
+  height: 35px;
+  background-color: #fff;
+  border-radius: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+}
+
+.call-btn__contact.\._active {
+  top: 45px;
 }
 
 .top-line__btn {
@@ -1012,6 +1047,10 @@ body.ie ._ibg img {
 
 .header {
   display: none;
+}
+
+.header.\._active {
+  top: 60px;
 }
 
 .naw-wrapper {
@@ -1656,7 +1695,7 @@ body.ie ._ibg img {
 }
 
 .text__list li {
-  background: url("../img/list-dot.png") 0 8.5px no-repeat;
+  background: url("../img/text-block/list-dot.png") 0 8.5px no-repeat;
   padding-left: 25px;
 }
 
@@ -1701,7 +1740,7 @@ body.ie ._ibg img {
 }
 
 .text-copy__list li {
-  background: url("../img/list-dot.png") 0 8.5px no-repeat;
+  background: url("../img/text-block/list-dot.png") 0 8.5px no-repeat;
   padding-left: 25px;
 }
 
@@ -1998,7 +2037,7 @@ body.ie ._ibg img {
 .footer .footer-form__text {
   height: 60px;
   padding: 9px 0px 0px 40px;
-  background-image: url("../img/message.png");
+  background-image: url("../img/footer-message.png");
   background-repeat: no-repeat;
   background-position: 15px 10px;
   margin-bottom: 32px;
@@ -2306,6 +2345,7 @@ body.ie ._ibg img {
 
   .top-line {
     position: relative;
+    background-color: #fff;
   }
 
   .logo a {
@@ -2348,6 +2388,12 @@ body.ie ._ibg img {
 
   .header {
     background-color: #ffb215;
+    position: absolute;
+    top: 0px;
+    width: 100%;
+    -webkit-transition: all 0.3s ease 0s;
+    -o-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
   }
 
   .nav {
@@ -2480,6 +2526,7 @@ body.ie ._ibg img {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
+    padding-top: 225px;
   }
 
   .banner__title {
@@ -2817,7 +2864,7 @@ body.ie ._ibg img {
 .popup__close{background:url("../img/icons/close.svg") 0 0 no-repeat}
 .banner-form__name{background-image:url("../img/name.webp")}
 .banner-form__tel{background-image:url("../img/phone.webp")}
-.banner-form__text{background-image:url("../img/message.webp")}
+.banner-form__text{background-image:url("../img/modal-message.webp")}
 .logo a{background-image:url(../img/logo.svg)}
 .call-btn__link{background-image:url("../img/header/phone2.svg")}
 .nav__sub-link{background-image:url("../img/header/dot-header.webp")}
@@ -2833,8 +2880,8 @@ body.ie ._ibg img {
 .price__check-text{background-image:url("../img/price/price-checkbox.webp")}
 .price__check-text::before{background-image:url("../img/price/price-active-checkbox.webp")}
 .text{background-image:url("../img/text-block/text-mobile-bg.webp")}
-.text__list li{background:url("../img/list-dot.webp") 0 8.5px no-repeat}
-.text-copy__list li{background:url("../img/list-dot.webp") 0 8.5px no-repeat}
+.text__list li{background:url("../img/text-block/list-dot.webp") 0 8.5px no-repeat}
+.text-copy__list li{background:url("../img/text-block/list-dot.webp") 0 8.5px no-repeat}
 .start{background-image:url("../img/start-block/start-mobile-bg.webp")}
 .start__item-image .list-icon{background:url("../img/start-block/list.svg") center no-repeat}
 .start__item-image .hands-icon{background:url("../img/start-block/hands.svg") center no-repeat}
@@ -2842,7 +2889,7 @@ body.ie ._ibg img {
 .start__item-image .check-icon{background:url("../img/start-block/check.svg") center no-repeat}
 .footer .footer-form__name{background-image:url("../img/name.webp")}
 .footer .footer-form__tel{background-image:url("../img/phone.webp")}
-.footer .footer-form__text{background-image:url("../img/message.webp")}
+.footer .footer-form__text{background-image:url("../img/footer-message.webp")}
 .footer .info__viber{background-image:url("../img/icons/viber.svg")}
 .footer .info__whatsapp{background-image:url("../img/icons/whatsapp.svg")}
 }
